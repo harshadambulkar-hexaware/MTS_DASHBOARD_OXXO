@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="User" table="USERS">
+		<id name="id" column="USER_ID">
+			<generator class="native"/>
+		</id>
+		<property name="username" column="USERNAME" />
+		<property name="password" column="PASSWORD" />
+		<property name="email" column="EMAIL" />
+		<property name="projectname" column="PROJECTNAME" />
+		<property name="userrole" column="USERROLE" />
+		<property name="status" column="STATUS" />
+		<property name="tfs_host" column="TFS_HOST" />
+		<property name="tfs_username" column="TFS_USERNAME" />
+		<property name="tfs_password" column="TFS_PASSWORD" />
+		<property name="alm_host" column="ALM_HOST" />
+		<property name="alm_username" column="ALM_USERNAME" />
+		<property name="alm_password" column="ALM_PASSWORD" />
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="TestingAnalysis" table="TESTING_ANALYSIS">
+		<id name="testing_analysis_entity_id" column="TESTING_ANALYSIS_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="testing_analysis_release_id" column="TESTING_ANALYSIS_RELEASE_ID" />
+		<property name="ist_effort" column="IST_EFFORT" />
+		<property name="uat_effort" column="UAT_EFFORT" />
+		<property name="ist_performance" column="IST_PERFORMANCE" />
+		<property name="ist_value_add" column="IST_VALUE_ADD" />
+		<property name="ist_owned_rejection" column="IST_OWNED_REJECTION" />
+		<property name="uat_performance" column="UAT_PERFORMANCE" />
+		<property name="uat_value_add" column="UAT_VALUE_ADD" />
+		<property name="uat_owned_rejection" column="UAT_OWNED_REJECTION" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

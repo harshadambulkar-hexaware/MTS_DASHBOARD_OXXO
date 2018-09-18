@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="Defect" table="DEFECTS">
+		<id name="defect_entity_id" column="DEFECT_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		
+		<property name="defect_release_id" column="DEFECT_RELEASE_ID" />
+		<property name="severity" column="SEVERITY" />
+		<property name="functional_area" column="FUNCTIONAL_AREA" />
+		<property name="title" column="TITLE" />
+		<property name="submit_date" column="SUBMIT_DATE" />
+		<property name="closed_date" column="CLOSED_DATE" />
+		<property name="state" column="STATE" />
+		<property name="ist_release_eta" column="IST_RELEASE_ETA" />
+		<property name="root_cause_analysis" column="ROOT_CAUSE_ANALYSIS" />
+		<property name="ist_retest_status" column="IST_RETEST_STATUS" />
+		<property name="defect_id" column="DEFECT_ID" />
+		<property name="phase_raised" column="PHASE_RAISED" />
+		<property name="raised_during" column="RAISED_DURING" />
+		<property name="detected_in_release" column="DETECTED_IN_RELEASE" />
+		<property name="timestamp" column="TIMESTAMP" />
+		<property name="unit_test_candidate_flag" column="UNIT_TEST_CANDIDATE_FLAG" />
+		<property name="impacted_regions" column="IMPACTED_REGIONS" />
+		<property name="rejected_issue_analysis" column="REJECTED_ISSUE_ANALYSIS" />
+		<property name="ist_classification" column="IST_CLASSIFICATION" />
+		<property name="passed_first_ist_retest" column="PASSED_FIRST_IST_RETEST" />
+		<property name="passed_first_uat_retest" column="PASSED_FIRST_UAT_RETEST" />
+		<property name="first_defect_investcode_date" column="FIRST_DEFECT_INVESTCODE_DATE" />
+		<property name="last_defect_investcode_date" column="LAST_DEFECT_INVESTCODE_DATE" />
+		<property name="estimated_fix_time" column="ESTIMATED_FIX_TIME" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+		<property name="priority" column="PRIORITY" />
+	</class>	
+</hibernate-mapping>

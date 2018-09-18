@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="ScheduleTime" table="SCHEDULE_TIME">
+		<id name="schedule_id" column="SCHEDULE_ID">
+			<generator class="native"/>
+		</id>
+		
+		<property name="mm" column="MM" />
+		<property name="hh" column="HH" />
+		<property name="day" column="DAY" />
+		<property name="month" column="MONTH" />
+		<property name="year" column="YEAR" />
+		
+	</class>	
+</hibernate-mapping>

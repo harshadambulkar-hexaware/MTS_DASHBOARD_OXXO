@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="ScopeAnalysis" table="SCOPE_ANALYSIS">
+		<id name="scope_entity_id" column="SCOPE_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="scope_release_id" column="SCOPE_RELEASE_ID" />
+		<property name="crs_release_scope" column="CRS_RELEASE_SCOPE" />
+		<property name="crs_ist_scope" column="CRS_IST_SCOPE" />
+		<property name="crs_uat_scope" column="CRS_UAT_SCOPE" />
+		<property name="scope_freeze_date" column="SCOPE_FREEZE_DATE" />
+		<property name="crs_added_after_freeze" column="CRS_ADDED_AFTER_FREEZE" />
+		<property name="planned_ist_start_date" column="PLANNED_IST_START_DATE" />
+		<property name="actual_ist_start_date" column="ACTUAL_IST_START_DATE" />
+		<property name="delta_ist_start_date" column="DELTA_IST_START_DATE" />
+		<property name="planned_uat_start_date" column="PLANNED_UAT_START_DATE" />
+		<property name="actual_uat_start_date" column="ACTUAL_UAT_START_DATE" />
+		<property name="delta_uat_start_date" column="DELTA_UAT_START_DATE" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

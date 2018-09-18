@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="DefectDevAnalysis" table="DEFECT_DEV_ANALYSIS">
+		<id name="defect_dev_entity_id" column="DEFECT_DEV_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="defect_dev_release_id" column="DEFECT_DEV_RELEASE_ID" />
+		<property name="ist_confirmed_defects" column="IST_CONFIRMED_DEFECTS" />
+		<property name="ist_dev_defects" column="IST_DEV_DEFECTS" />
+		<property name="ist_unit_testing_candidates" column="IST_UNIT_TESTING_CANDIDATES" />
+		<property name="uat_confirmed_defects" column="UAT_CONFIRMED_DEFECTS" />
+		<property name="uat_dev_defects" column="UAT_DEV_DEFECTS" />
+		<property name="uat_unit_testing_candidates" column="UAT_UNIT_TESTING_CANDIDATES" />
+		<property name="ist_initial_pass_rate" column="IST_INITIAL_PASS_RATE" />
+		<property name="uat_initial_pass_rate" column="UAT_INITIAL_PASS_RATE" />
+		<property name="retest_initial_pass_rate" column="RETEST_INITIAL_PASS_RATE" />
+		<property name="defect_score" column="DEFECT_SCORE" />
+		<property name="defect_aging_score" column="DEFECT_AGING_SCORE" />
+		<property name="code_slip_score" column="CODE_SLIP_SCORE" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

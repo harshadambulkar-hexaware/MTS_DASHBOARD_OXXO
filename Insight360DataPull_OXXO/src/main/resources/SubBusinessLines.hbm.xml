@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="SubBusinessLines" table="SUB_BUSINESS_LINES">
+		<id name="sub_business_line_id" column="BUSINESS_LINE_ID">
+			<generator class="native"/>
+		</id>
+		<property name="sub_business_line_name" column="SUB_BUSINESS_LINE_NAME" />
+		<property name="is_active" column="IS_ACTIVE" />
+		<property name="is_archived" column="IS_ARCHIVED" />
+		<property name="sub_business_line_health" column="SUB_BUSINESS_LINE_HEALTH" />
+		
+	</class>
+</hibernate-mapping>

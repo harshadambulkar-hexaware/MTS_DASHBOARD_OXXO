@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="TrendsHistoryStorage" table="TrendsHistoryStorage">
+		<id name="trendsHistoryStorageEntityId" column="trendsHistoryStorageEntityId">
+			<generator class="native"/>
+		</id>
+		<property name="subBusinesslineId" column="subBusinesslineId" />
+		<property name="projectId" column="projectId" />
+		<property name="projectName" column="projectName" />
+		<property name="releaseId" column="releaseId" />
+		<property name="releaseName" column="releaseName" />
+		<property name="phase" column="phase" />
+		<property name="module" column="module" />
+		<property name="defectCountByModule" column="defectCountByModule" />
+		<property name="rootCause" column="rootCause" />
+		<property name="defectCountByRootCause" column="defectCountByRootCause" />
+		<property name="dataInsertedDate" column="dataInsertedDate" />
+		<property name="passedTestCases" column="passedTestCases" />
+		<property name="failedTestCases" column="failedTestCases" />
+		<property name="passedReTestCases" column="passedReTestCases" />
+		<property name="ipr" column="ipr" />
+		<property name="defectScore" column="defectScore" />
+		<property name="failureScore" column="failureScore" />
+		<property name="codeDeliverySlipScore" column="codeDeliverySlipScore" />
+		<property name="testDesignProductivity" column="testDesignProductivity" />
+		<property name="testExecutionProductivity" column="testExecutionProductivity" />
+		<property name="testDefectProductivity" column="testDefectProductivity" />
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="Requirement" table="REQUIREMENTS">
+		<id name="requirement_entity_id" column="REQUIREMENT_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		
+		<property name="req_release_id" column="REQ_RELEASE_ID" />
+		<property name="req_id" column="REQ_ID" />
+		<property name="title" column="TITLE" />
+		<property name="module" column="MODULE" />
+		<property name="region" column="REGION" />
+		<property name="type_of_change" column="TYPE_OF_CHANGE" />
+		<property name="approved_for_dev_date" column="APPROVED_FOR_DEV_DATE" />		
+		<property name="direct_coverage" column="DIRECT_COVERAGE" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

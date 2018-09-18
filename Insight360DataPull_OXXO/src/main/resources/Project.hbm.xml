@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="Project" table="PROJECTS">
+		<id name="projectId" column="PROJECT_ID">
+			<generator class="native"/>
+		</id>
+		<property name="projectName" column="PROJECT_NAME" />
+		<property name="isActive" column="IS_ACTIVE" />
+		<property name="isArchived" column="IS_ARCHIVED" />
+		<property name="isPlatform" column="IS_PLATFORM_APPLICABLE" />
+		<property name="displayName" column="PROJECT_DISPLAY_NAME" />
+		<property name="domainName" column="DOMAIN_NAME" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+		<property name="sub_business_line_id" column="sub_business_line_id" />
+		<property name="health" column="project_health" />
+		<property name="sit_uat_insight" column="sit_uat_insight"/>
+		<property name="business_critical" column="business_critical"/>
+		<property name="sit_uat_rel_ind" column="SIT_UAT_Rel_Indicator"/>
+		<property name="sit_uat_req_ind" column="SIT_UAT_Req_Indicator"/>
+		<property name="test_scope" column="TESTING_SCOPE"/>
+		
+	</class>	
+</hibernate-mapping>

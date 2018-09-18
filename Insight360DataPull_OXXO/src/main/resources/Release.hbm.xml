@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="Release" table="RELEASES">
+		<id name="release_entity_id" column="RELEASE_ENTITY_ID">
+			<generator class="native"/>
+		</id>	
+		<property name="release_project_id" column="RELEASE_PROJECT_ID" />
+		<property name="release_id" column="RELEASE_ID" />
+		<property name="release_name" column="RELEASE_NAME" />
+		<property name="is_active" column="IS_ACTIVE" />
+		<property name="is_archived" column="IS_ARCHIVED" />
+		<property name="last_updated_ts" column="LAST_UPDATED_TS" />
+		<property name="schdl_istsignoff_date" column="SCHDL_ISTSIGNOFF_DATE" />
+		<property name="uat_start_date" column="UAT_START_DATE" />
+		<property name="uat_end_date" column="UAT_END_DATE" />
+		<property name="go_nogo_date" column="GO_NOGO_DATE" />
+		<property name="go_live_date" column="GO_LIVE_DATE" />
+		<property name="init_scope_cutoff_date" column="INIT_SCOPE_CUTOFF_DATE" />
+		<property name="first_uat_rels_orig_date" column="FIRST_UAT_RELS_ORIG_DATE" />
+		<property name="first_uat_rels_curr_date" column="FIRST_UAT_RELS_CURR_DATE" />
+		<property name="exec_report_start_date" column="EXEC_REPORT_START_DATE" />
+		<property name="comments" column="COMMENTS" />
+		<property name="cycle_weeks" column="CYCLE_WEEKS" />
+		<property name="curr_end_dt" column="CURR_END_DT" />
+		<property name="plnd_end_dt" column="PLND_END_DT" />
+		<property name="req_planned_start" column="REQ_PLANNED_START" />
+		<property name="req_actual_start" column="REQ_ACTUAL_START" />
+		<property name="req_planned_end" column="REQ_PLANNED_END" />
+		<property name="req_actual_end" column="REQ_ACTUAL_END" />
+		<property name="ux_planned_start" column="UX_PLANNED_START" />
+		<property name="ux_actual_start" column="UX_ACTUAL_START" />
+		<property name="ux_planned_end" column="UX_PLANNED_END" />
+		<property name="ux_actual_end" column="UX_ACTUAL_END" />
+		<property name="dev_planned_start" column="DEV_PLANNED_START" />
+		<property name="dev_actual_start" column="DEV_ACTUAL_START" />
+		<property name="dev_planned_end" column="DEV_PLANNED_END" />
+		<property name="dev_actual_end" column="DEV_ACTUAL_END" />
+		<property name="ist_planned_start" column="IST_PLANNED_START" />
+		<property name="ist_actual_start" column="IST_ACTUAL_START" />
+		<property name="ist_planned_end" column="IST_PLANNED_END" />
+		<property name="ist_actual_end" column="IST_ACTUAL_END" />
+		<property name="uat_planned_start" column="UAT_PLANNED_START" />
+		<property name="uat_actual_start" column="UAT_ACTUAL_START" />
+		<property name="uat_planned_end" column="UAT_PLANNED_END" />
+		<property name="uat_actual_end" column="UAT_ACTUAL_END" />
+		<property name="platforms" column="PLATFORMS" />
+		<property name="ist_first_report_date" column="IST_FIRST_REPORT_DATE" />
+		<property name="ist_last_report_date" column="IST_LAST_REPORT_DATE" />
+		<property name="scope_freeze_date" column="SCOPE_FREEZE_DATE" />
+		<property name="planned_ist_start_date" column="PLANNED_IST_START_DATE" />
+		<property name="planned_uat_start_date" column="PLANNED_UAT_START_DATE" />
+		<property name="uat_first_report_date" column="UAT_FIRST_REPORT_DATE" />
+		<property name="uat_last_report_date" column="UAT_LAST_REPORT_DATE" />
+		<property name="rel_ist_planned_end_dt" column="REL_IST_PLANNED_END_DT" />
+		<property name="rel_ist_actual_end_dt" column="REL_IST_ACTUAL_END_DT" />
+		<property name="rel_uat_planned_end_dt" column="REL_UAT_PLANNED_END_DT" />
+		<property name="rel_uat_actual_end_dt" column="REL_UAT_ACTUAL_END_DT" />
+		<property name="ist_health" column="IST_HEALTH" />
+		<property name="uat_health" column="UAT_HEALTH" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+		<property name="uat_release_id" column="UAT_RELEASE_ID" />
+		<property name="jira_project_id" column="JIRA_PROJECT_ID" />
+		<property name="phase" column="PHASE" />
+	</class>	
+</hibernate-mapping>

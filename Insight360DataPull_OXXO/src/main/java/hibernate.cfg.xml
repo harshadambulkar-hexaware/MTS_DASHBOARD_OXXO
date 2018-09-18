@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>        
+  <session-factory>
+   <property name="dialect">org.hibernate.dialect.MySQLDialect</property> 
+    <!--<property name="dialect">org.hibernate.dialect.SQLServer2012Dialect</property>-->
+    <property name="show_sql">true</property>
+    <mapping resource="User.hbm.xml"/>
+    <mapping resource="Project.hbm.xml"/> 
+    <mapping resource="Release.hbm.xml"/>
+    <mapping resource="Requirement.hbm.xml"/>
+    <mapping resource="RequirementProgress.hbm.xml"/>
+    <mapping resource="Defect.hbm.xml"/>
+    <mapping resource="Test.hbm.xml"/>
+    <mapping resource="UserProjectMapping.hbm.xml"/>
+    <mapping resource="DefectDevAnalysis.hbm.xml"/>
+    <mapping resource="DefectsHistory.hbm.xml"/>
+    <mapping resource="DsrCrHistory.hbm.xml"/>
+    <mapping resource="ScopeAnalysis.hbm.xml"/>
+    <mapping resource="TestingAnalysis.hbm.xml"/>
+    <mapping resource="ScheduleTime.hbm.xml"/>
+    <mapping resource="BusinessLines.hbm.xml"/>
+    <mapping resource="SubBusinessLines.hbm.xml"/>
+    <mapping resource="TrendsHistoryStorage.hbm.xml"/>
+    <mapping resource="DatapullLog.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

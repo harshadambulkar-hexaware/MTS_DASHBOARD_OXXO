@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="DsrCrHistory" table="DSR_CR_HISTORY">
+		<id name="history_entity_id" column="HISTORY_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="history_requirement_id" column="HISTORY_REQUIREMENT_ID" />
+		<property name="history_release_id" column="HISTORY_RELEASE_ID" />
+		<property name="history_date" column="HISTORY_DATE" />
+		<property name="history_phase" column="HISTORY_PHASE" />
+		<property name="cr_planned_cases" column="CR_PLANNED_CASES" />
+		<property name="cr_passed_cases" column="CR_PASSED_CASES" />
+		<property name="cr_failed_cases" column="CR_FAILED_CASES" />
+		<property name="cr_execution_status" column="CR_EXECUTION_STATUS" />
+		<property name="cr_planned_ist_end" column="CR_PLANNED_IST_END" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+		<property name="fk_req_progress_entity_id" column ="FK_REQ_PROGRESS_ENTITY_ID"/>
+	</class>	
+</hibernate-mapping>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="Test" table="TEST">
+		<id name="test_entity_id" column="TEST_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		
+		<property name="test_req_id" column="TEST_REQ_ID" />
+		<property name="test_release_id" column="TEST_RELEASE_ID" />
+		<property name="test_id" column="TEST_ID" />
+		<property name="title" column="TITLE" />
+		<property name="creation_time" column="CREATION_TIME" />
+		<property name="last_modified" column="LAST_MODIFIED" />
+		<property name="status" column="STATUS" />
+		<property name="exec_status" column="EXEC_STATUS" />
+		<property name="test_phase" column="TEST_PHASE" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

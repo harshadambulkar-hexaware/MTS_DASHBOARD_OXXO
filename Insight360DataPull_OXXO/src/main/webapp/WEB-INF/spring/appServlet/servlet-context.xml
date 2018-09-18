@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+		
+
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+	
+	<!-- Enables the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+
+	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+	<beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<beans:property name="prefix" value="/WEB-INF/views/" />
+		<beans:property name="suffix" value=".jsp" />
+	</beans:bean>
+	
+	<context:component-scan base-package="com.hexaware.insight360DataPull" />
+	<context:property-placeholder location="classpath:app.properties" />
+	
+	
+	<!-- Task Sceduler bean registration -->
+	<task:annotation-driven />
+    <!-- <beans:bean id="dataPullSceduler" class="com.hexaware.insight360DataPull.SchedulerController"></beans:bean>  -->
+	
+	
+	 <beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/schema_datapull_table"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="root"/>
+    </beans:bean> 
+    <beans:bean id="secondDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/schema_datapull_table"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="root"/>
+    </beans:bean> 
+    
+    <!-- Impementation for OXXO , connecting to MS sql server-->
+    
+    <!--<beans:bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <beans:property name="url" value="jdbc:sqlserver://172.25.224.111:1433;DatabaseName=Insight360_OXXO"/>
+        <beans:property name="username" value="sa"/>
+        <beans:property name="password" value="Password123"/>
+    </beans:bean>-->
+    
+    <beans:bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <beans:property name="dataSource" ref="dataSource" />
+		<beans:property name="configLocation" value="classpath:hibernate.cfg.xml" />
+    </beans:bean>
+    
+    <!-- <beans:bean id="secondDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <beans:property name="url" value="jdbc:mysql://localhost:3306/parameterisation_schema"/>
+        <beans:property name="username" value="root"/>
+        <beans:property name="password" value="admin"/>
+    </beans:bean> -->
+    
+    <!-- Impementation for OXXO, connecting to MS sql server -->
+    
+<!--    <beans:bean id="secondDataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
+        <beans:property name="url" value="jdbc:sqlserver://172.25.224.111:1433;DatabaseName=Insight360_OXXO"/>
+        <beans:property name="username" value="sa"/>
+        <beans:property name="password" value="Password123"/>
+    </beans:bean> -->
+    
+    <beans:bean id="secondSessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <beans:property name="dataSource" ref="secondDataSource" />
+		<beans:property name="configLocation" value="classpath:hibernate.cfg2.xml" />
+    </beans:bean>
+    
+    <!-- Using JNDI resource for dataSource
+     <beans:bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+    	<beans:property name="jndiName" value="jdbc/i360-gbs"/>
+	</beans:bean> --> 
+     
+    <tx:annotation-driven />
+    <beans:bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <beans:property name="sessionFactory" ref="sessionFactory" />
+    </beans:bean>
+    
+	<beans:bean id="userDao" class="com.hexaware.insight360DataPull.dao.UserDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="projectDao" class="com.hexaware.insight360DataPull.dao.ProjectDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>  	
+	
+	<beans:bean id="releaseDao" class="com.hexaware.insight360DataPull.dao.ReleaseDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="requirementDao" class="com.hexaware.insight360DataPull.dao.RequirementDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="requirementProgressDao" class="com.hexaware.insight360DataPull.dao.RequirementProgressDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="defectDao" class="com.hexaware.insight360DataPull.dao.DefectDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="userProjectMappingDao" class="com.hexaware.insight360DataPull.dao.UserProjectMappingDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="defectDevAnalysisDao" class="com.hexaware.insight360DataPull.dao.DefectDevAnalysisDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="defectsHistoryDao" class="com.hexaware.insight360DataPull.dao.DefectsHistoryDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="dsrCrHistoryDao" class="com.hexaware.insight360DataPull.dao.DsrCrHistoryDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="scopeAnalysisDao" class="com.hexaware.insight360DataPull.dao.ScopeAnalysisDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="testingAnalysisDao" class="com.hexaware.insight360DataPull.dao.TestingAnalysisDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="testDao" class="com.hexaware.insight360DataPull.dao.TestDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="scheduleTimeDao" class="com.hexaware.insight360DataPull.dao.ScheduleTimeDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="businessLinesDao" class="com.hexaware.insight360DataPull.dao.BusinessLinesDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="subBusinessLinesDao" class="com.hexaware.insight360DataPull.dao.SubBusinessLinesDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="sessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="trendsHistoryStorageDAO" class="com.hexaware.insight360DataPull.dao.TrendsHistoryStorageDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="secondSessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+	<beans:bean id="datapulllogDAO" class="com.hexaware.insight360DataPull.dao.DatapullLogDAOImpl">
+	    <beans:constructor-arg>
+	        <beans:ref bean="secondSessionFactory" />
+	    </beans:constructor-arg>
+	</beans:bean>
+	
+</beans:beans>

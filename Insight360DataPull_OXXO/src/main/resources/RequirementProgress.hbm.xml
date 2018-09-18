@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="RequirementProgress" table="REQUIREMENTS_PROGRESS">
+		<id name="req_progress_entity_id" column="REQ_PROGRESS_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="req_release_id" column="REQ_REL_ID" />
+		<property name="req_id" column="REQ_ID" />
+		<property name ="test_phase" column="PHASE"/>
+		<property name="planned_planning_start" column="PLANNED_PLANNING_START" />		
+		<property name="actual_planning_start" column="ACTUAL_PLANNING_START" />		
+		<property name="planned_planning_end" column="PLANNED_PLANNING_END" />		
+		<property name="actual_planning_end" column="ACTUAL_PLANNING_END" />		
+		<property name="planning_status" column="PLANNING_STATUS" />		
+		<property name="num_of_test_cases" column="NUM_OF_TEST_CASES" />
+		<property name="tcs_with_iterations" column="TCS_WITH_ITERATIONS" />
+		<property name="package_number" column="PACKAGE_NUMBER" />
+		<property name="planned_dev_certification" column="PLANNED_DEV_CERTIFICATION" />
+		<property name="actual_dev_certification" column="ACTUAL_DEV_CERTIFICATION" />
+		<property name="planned_execution_start" column="PLANNED_EXECUTION_START" />		
+		<property name="actual_execution_start" column="ACTUAL_EXECUTION_START" />		
+		<property name="planned_execution_end" column="PLANNED_EXECUTION_END" />
+		<property name="actual_execution_end" column="ACTUAL_EXECUTION_END" />
+		<property name="tcs_passed_first_run" column="TCS_PASSED_FIRST_RUN" />		
+		<property name="tcs_failed_first_run" column="TCS_FAILED_FIRST_RUN" />
+		<property name="dev_failures" column="DEV_FAILURES" />
+		<property name="tsc_pending_fun_request" column="TSC_PENDING_FUN_REQUEST" />
+		<property name="tcs_pending" column="TCS_PENDING" />
+		<property name="current_certification" column="CURRENT_CERTIFICATION" />
+		<property name="actual_certification" column="ACTUAL_CERTIFICATION" />
+		<property name="tcs_passed_retest" column="TCS_PASSED_RETEST" />
+		<property name="timestamp" column="TIMESTAMP" />
+		<property name="in_scope" column="IN_SCOPE" />
+		<property name="tcs_pending_fun_request" column="TCS_PENDING_FUN_REQUEST" />
+		<property name="orig_plnd_exec_start_dt" column="ORIG_PLND_EXEC_START_DT" />		
+		<property name="orig_plnd_exec_end_dt" column="ORIG_PLND_EXEC_END_DT" />
+		<property name="orig_plnd_tcs_count" column="ORIG_PLND_TCS_COUNT" />		
+		<property name="execution_estimate" column="EXECUTION_ESTIMATE" />
+		<property name="planning_estimate" column="PLANNING_ESTIMATE" />		
+		<property name="platform" column="PLATFORM" />
+		<property name="requirement_defn_percentage" column="REQUIREMENT_DEFN_PERCENTAGE" />
+		<property name="ux_progress_percentage" column="UX_PROGRESS_PERCENTAGE" />
+		<property name="orig_dev_cert_date" column="ORIG_DEV_CERT_DATE" />
+		<property name="orig_cert_date" column="ORIG_CERT_DATE" />
+		<property name="cr_rel_link_date" column="CR_REL_LINK_DATE" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+		<property name="direct_coverage" column="DIRECT_COVERAGE" />
+		<property name="req_progress_module" column="MODULE" />
+	</class>	
+</hibernate-mapping>

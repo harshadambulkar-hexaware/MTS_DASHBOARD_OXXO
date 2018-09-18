@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="DefectsHistory" table="DEFECTS_HISTORY">
+		<id name="def_hist_entity_id" column="DEF_HIST_ENTITY_ID">
+			<generator class="native"/>
+		</id>
+		<property name="def_hist_rel_id" column="DEF_HIST_REL_ID" />
+		<property name="def_hist_timestamp" column="DEF_HIST_TIMESTAMP" />
+		<property name="phase" column="PHASE" />
+		<property name="def_hist_severity_sev5" column="DEF_HIST_SEVERITY_SEV5" />
+		<property name="def_hist_severity_sev4" column="DEF_HIST_SEVERITY_SEV4" />
+		<property name="def_hist_severity_sev3" column="DEF_HIST_SEVERITY_SEV3" />
+		<property name="def_hist_severity_sev2" column="DEF_HIST_SEVERITY_SEV2" />
+		<property name="def_hist_severity_sev1" column="DEF_HIST_SEVERITY_SEV1" />
+		<property name="def_totl_defects" column="DEF_TOTL_DEFECTS" />
+		<property name="def_total_incremental" column="DEF_OPEN_INCREMENTAL" />
+		<property name="def_hist_closed_severity_sev5" column="DEF_HIST_CLOSED_SEVERITY_Sev5" />
+		<property name="def_hist_closed_severity_sev4" column="DEF_HIST_CLOSED_SEVERITY_Sev4" />
+		<property name="def_hist_closed_severity_sev3" column="DEF_HIST_CLOSED_SEVERITY_Sev3" />
+		<property name="def_hist_closed_severity_sev2" column="DEF_HIST_CLOSED_SEVERITY_Sev2" />
+		<property name="def_hist_closed_severity_sev1" column="DEF_HIST_CLOSED_SEVERITY_Sev1" />
+		<property name="def_totl_closed_defects" column="DEF_TOTL_CLOSED_DEFECTS" />
+		<property name="data_src_tool" column="DATA_SRC_TOOL" />
+	</class>	
+</hibernate-mapping>

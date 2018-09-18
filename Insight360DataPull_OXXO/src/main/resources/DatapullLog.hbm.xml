@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <hibernate-mapping package="com.hexaware.insight360DataPull.model">
+	<class name="DatapullLog" table="DATAPULL_LOG">
+		<id name="datapull_id" column="DATAPULL_ID">
+			<generator class="native"/>
+		</id>		
+		
+		<property name="project_id" column="PROJECT_ID" />
+		<property name="project_name" column="PROJECT_NAME" />
+		<property name="release_id" column="RELEASE_ID" />
+		<property name="release_name" column="RELEASE_NAME" />
+		<property name="start_date" column="START_DATE" />
+		<property name="start_time" column="START_TIME" />
+		<property name="end_date" column="END_DATE" />
+		<property name="end_time" column="END_TIME" />
+		<property name="src_tool" column="SRC_TOOL" />
+		
+		<property name="req_success" column="REQ_SUCCESS" />
+		<property name="def_success" column="DEF_SUCCESS" />
+		<property name="def_hist_success" column="DEF_HIST_SUCCESS" />
+		<property name="req_exception" column="REQ_EXCEPTION" />
+		<property name="def_exception" column="DEF_EXCEPTION" />
+		<property name="def_hist_exception" column="DEF_HIST_EXCEPTION" />		
+	</class>
+</hibernate-mapping>
